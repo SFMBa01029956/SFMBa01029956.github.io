@@ -1,0 +1,55 @@
+*
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+}
+
+div 
+{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.flex-container
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#main-container
+{
+    justify-content: space-between;
+}
+
+#second-container
+{
+    justify-content: space-evenly;
+}
+#b6
+{
+    order: 2;
+    flex: 2;
+}
+
+#b7
+{
+    order: 3;
+}
+
+#b8
+{
+    order: 5;
+    flex: 3
+}
+#b9
+{
+    order: 1;
+    flex: 3;
+}
+
+#b10
+{
+    order: 4;
+}
