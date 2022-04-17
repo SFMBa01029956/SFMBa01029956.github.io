@@ -1,0 +1,16 @@
+*
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+}
+
+body
+{
+    margin: 0px;
+    
+}
+#header 
+{
+    background-color: black;
+    color: aliceblue;
+}
