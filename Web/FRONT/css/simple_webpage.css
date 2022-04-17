@@ -6,6 +6,8 @@
 
 body
 {
+    height: 100%;
+    min-height: 100%;
     margin: 0px;
 }
 div 
@@ -28,6 +30,14 @@ div
     align-items: center;
 }
 
+.vt-cont
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 #page
 {
     font-size: larger;
@@ -35,28 +45,43 @@ div
 #header
 {
     align-items: center;
+    margin: 0%;
     padding: 0px;
-    
+    border:0px;
     justify-content: space-around;
     color: white;
-    background-color: gray;
+    background-color: #25404B;
+}
+
+#hdr
+{
+    font-size: 200%
 }
 
 #body
 {
+    padding-top: 40px;
+    padding-left: 190px;
+    padding-right: 190px;
+    padding-bottom: 70px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     color: white;
-    background-color: orange;
+    background-color: #B97D2D;
 }
 
 #contact
 {
     justify-content: center;
     color: white;
-    background-color: gray;
+    background-color: #25404B;
+}
+
+#btn
+{
+    background-color: #B97D2D;
+    color: white;
 }
 
 #banner
@@ -69,5 +94,5 @@ div
 {
     justify-content: center;
     color: white;
-    background-color: gray;
+    background-color: #25404B;
 }
