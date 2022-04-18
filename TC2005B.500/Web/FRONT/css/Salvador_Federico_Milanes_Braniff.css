@@ -1,0 +1,42 @@
+*
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body
+{
+    margin: 0%;
+}
+div
+{
+    border: 1px solid black;
+}
+
+.hzt-cont
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0px;
+    border:0px;
+    justify-content: space-around;
+    color: white;
+    background-color: #25404B;
+}
+
+.collage
+{
+    display: flex;
+}
+
+#page
+{
+    font-size: larger;
+}
