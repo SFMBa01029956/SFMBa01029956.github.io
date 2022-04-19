@@ -49,6 +49,11 @@ h1
     margin: 0;
 }
 
+h2
+{
+    padding-left: 1%;
+}
+
 .banner2
 {
     background-color: rgb(223, 223, 223);
@@ -57,10 +62,7 @@ h1
     
 }
 
-h2
-{
-    padding-left: 1%;
-}
+
 
 .bannerBox
 {
@@ -71,4 +73,16 @@ h2
 
     align-items: center;
     justify-items: center;
+}
+
+#greeting
+{
+    display: grid;
+    background-color:#1e5ece;
+    color: #ffffff;
+}
+
+#greeting h1
+{
+    padding-left: 1%;
 }
