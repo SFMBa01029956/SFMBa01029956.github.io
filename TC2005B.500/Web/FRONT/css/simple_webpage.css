@@ -4,12 +4,47 @@
     font-size: 10px;
 }
 
+header
+{
+    background-color: #25404B;
+    color: white;
+    
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main
+{
+    justify-content: center;
+}
+
+footer
+{
+    background-color: #25404B;
+    color: white;
+
+    justify-content: center;
+    align-items: center;
+}
+
 body
 {
     height: 100%;
     min-height: 100%;
+
     margin: 0px;
+    padding: 0px;
 }
+
 div 
 {
     margin: 0px;
@@ -41,16 +76,6 @@ div
 #page
 {
     font-size: larger;
-}
-#header
-{
-    align-items: center;
-    margin: 0%;
-    padding: 0px;
-    border:0px;
-    justify-content: space-around;
-    color: white;
-    background-color: #25404B;
 }
 
 #hdr
@@ -88,11 +113,4 @@ div
 {
     align-items: center;
     border: 0px solid white;
-}
-
-#foot
-{
-    justify-content: center;
-    color: white;
-    background-color: #25404B;
 }

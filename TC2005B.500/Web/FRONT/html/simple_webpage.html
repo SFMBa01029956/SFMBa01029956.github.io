@@ -5,11 +5,11 @@
     <title>simple web page</title>
 </head>
 <body>
-    <div id="header"  class="flex-container">
+    <header>
         <div>
             <h3 id="page">Simple web page</h3>
         </div>
-        <div class="hzt-cont">
+        <nav>
             <div>
                 <h4>Content</h4>
             </div>
@@ -19,37 +19,41 @@
             <div>
                 <h4>Contact Us</h4>
             </div>
+        </nav>
+    </header>
+    <main>
+        <div id="body">
+            <h1 id="hdr">Web development course!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit ab cum aperiam, eveniet iste commodi earum veniam tenetur ipsa?</p>
         </div>
-    </div>
-    <div id="body">
-        <h1 id="hdr">Web development course!</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit ab cum aperiam, eveniet iste commodi earum veniam tenetur ipsa?</p>
-    </div>
-    <div id="contact" class="hzt-cont">
-        <div>
-            <h3>Subscribe to the newsletter</h3>
+        <div id="contact" class="hzt-cont">
+            <div>
+                <h3>Subscribe to the newsletter</h3>
+            </div>
+            <div>
+                <input type="text" placeholder="Enter your email"><button id="btn">SUBSCRIBE</button>
+            </div>
         </div>
-        <div>
-            <input type="text" placeholder="Enter your email"><button id="btn">SUBSCRIBE</button>
+        <div id="banner"class="hzt-cont">
+            <div class="vt-cont">
+                <img src="../images/hml.png" width="70">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, facere.</p>
+            </div>
+            <div class="vt-cont">
+                <img src="../images/cs.png" width="70">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestiae!</p>
+            </div>
+            <div class="vt-cont">
+                <img src="../images/jj.png" width="70">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, perspiciatis?</p>
+            </div>
         </div>
-    </div>
-    <div id="banner"class="hzt-cont">
-        <div class="vt-cont">
-            <img src="../images/hml.png" width="70">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, facere.</p>
+    </main>
+    <footer>
+        <div class="flex-container"id="foot">
+            <h4>TC2005 Copyright (C) 2021</h4>
         </div>
-        <div class="vt-cont">
-            <img src="../images/cs.png" width="70">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, molestiae!</p>
-        </div>
-        <div class="vt-cont">
-            <img src="../images/jj.png" width="70">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, perspiciatis?</p>
-        </div>
-    </div>
-    <div class="flex-container"id="foot">
-        <h4>TC2005 Copyright (C) 2021</h4>
-    </div>
+    </footer>
     <div>
         <a href="/index.html">Index</a>
     </div>
