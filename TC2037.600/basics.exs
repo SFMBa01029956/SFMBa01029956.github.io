@@ -27,7 +27,8 @@ defmodule Learn do
 end
 
 
-"""
+@doc """
+RACKET
 (define (fact-2 x)
 
     (define (fact-tail n a)
