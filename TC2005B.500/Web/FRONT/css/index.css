@@ -1,10 +1,11 @@
 *
 {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    
 }
 
 html, body
 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: auto;
     height: auto;
 }
@@ -51,11 +52,13 @@ h1
 
 h2
 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 1%;
 }
 
 .banner2
 {
+    font-family: 'Courier New', Courier, monospace;
     background-color: rgb(223, 223, 223);
     padding-left: 1%;
     margin-bottom: 3%;

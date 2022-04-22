@@ -1,0 +1,16 @@
+====BNF====
+
+<module> ::= defmodule <m_name> do \n\t<code> end
+<m_name> ::= <uppercase_char><string> | <uppercase_char><string><.><string>
+<code> ::= <expression> | <functions>
+<functions> ::= <function> | <functions> \n\t <function>
+<function> ::= def <f_name> () | def <f_name> (<elems>) do \n\t CODE end
+<elems> ::= <elem> | <elems> , <elem>
+====EBNF====
+
+MODULE ::= defmodule F_NAME do '\n' '\t' CODE end
+M_NAME ::= UPPERCASE_CHAR {CHARS} [{'.' UPPERCASE_CHAR {CHARS}}]
+CODE ::= {EXPRESSION} | {FUNCTION}
+FUNCTION ::= def F_NAME'(' {ELEM ','} ')' do '\n' '\t' CODE end
+
+** FOR - JAVA | WHILE - PYTHON ** 
