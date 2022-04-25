@@ -1,16 +1,45 @@
-====BNF====
+*** EXERCISE #1 ***
+==module & function (Elixir)==
 
-<module> ::= defmodule <m_name> do \n\t<code> end
-<m_name> ::= <uppercase_char><string> | <uppercase_char><string><.><string>
-<code> ::= <expression> | <functions>
-<functions> ::= <function> | <functions> \n\t <function>
-<function> ::= def <f_name> () | def <f_name> (<elems>) do \n\t CODE end
-<elems> ::= <elem> | <elems> , <elem>
-====EBNF====
+BNF
+    <module> ::= defmodule <m_name> do \n\t<code> end
+    <m_name> ::= <uppercase_char><string> | <uppercase_char><string><.><string>
+    <code> ::= <expression> | <functions>
+    <functions> ::= <function> | <functions> \n\t <function>
+    <function> ::= def <f_name> () | def <f_name> (<elems>) do \n\t CODE end
+    <elems> ::= <elem> | <elems> , <elem>
 
-MODULE ::= defmodule F_NAME do '\n' '\t' CODE end
-M_NAME ::= UPPERCASE_CHAR {CHARS} [{'.' UPPERCASE_CHAR {CHARS}}]
-CODE ::= {EXPRESSION} | {FUNCTION}
-FUNCTION ::= def F_NAME'(' {ELEM ','} ')' do '\n' '\t' CODE end
+EBNF
+    MODULE ::= defmodule F_NAME do '\n' '\t' CODE end
+    M_NAME ::= UPPERCASE_CHAR {CHARS} [{'.' UPPERCASE_CHAR {CHARS}}]
+    CODE ::= {EXPRESSION} | {FUNCTION}
+    FUNCTION ::= def F_NAME'(' {ELEM ','} ')' do '\n' '\t' CODE end
 
-** FOR - JAVA | WHILE - PYTHON ** 
+
+*** EXERCISE #2 ***
+==FOR (JAVA)==
+
+BNF
+    <for> ::= for (<var1> = <value>; <var1> <condition>; <var><update>)\n{\t<code>}
+    <condition> ::= <comparator> <value>
+    <update> ::= ++ | --
+    <code> ::= <expressions>
+    <expressions> ::=  <expression> | <expressions>\n<expression>
+
+EBNF
+    FOR ::= '('VAR1 '=' VALUE';' VAR1 CONDITION';' VAR UPDATE')' '\n' '{' CODE '}'
+    CONDITION ::= COMPARATOR VALUE
+    UPDATE ::= ++ | --
+    CODE ::= {EXPRESSION}
+
+==WHILE (PYTHON)==
+BNF
+    <while> ::= while <var_conditions>:\n\t<code>
+    <var_conditions> ::= <var_condition | <var_conditions> && <var_condition>
+    <var_condition> ::= <var> <comparator> <value>
+    <code> ::= <expressions>
+    <expressions> ::= <expression> | <expressions>\n<expression>
+EBNF
+    WHILE ::= while [VAR_CONDITIONS]':' '\n' '\t' CODE
+    VAR_CONDITIONS ::= { VAR COMPARATOR VALUE}
+    CODE ::= {EXPRESSION}
