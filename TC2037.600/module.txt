@@ -16,7 +16,7 @@ EBNF
     FUNCTION ::= def F_NAME'(' {ELEM ','} ')' do '\n' '\t' CODE end
 
 
-*** EXERCISE #2 ***
+*** EXERCISE #2 *** *** *** *** *** *** *** *** *** ***
 ==FOR (JAVA)==
 
 BNF
@@ -35,11 +35,11 @@ EBNF
 ==WHILE (PYTHON)==
 BNF
     <while> ::= while <var_conditions>:\n\t<code>
-    <var_conditions> ::= <var_condition | <var_conditions> && <var_condition>
+    <var_conditions> ::= <var_condition | <var_conditions> and <var_condition> | <var_conditions> or <var_condition>
     <var_condition> ::= <var> <comparator> <value>
     <code> ::= <expressions>
     <expressions> ::= <expression> | <expressions>\n<expression>
 EBNF
-    WHILE ::= while [VAR_CONDITIONS]':' '\n' '\t' CODE
-    VAR_CONDITIONS ::= { VAR COMPARATOR VALUE}
+    WHILE ::= while VAR_CONDITIONS':' '\n' '\t' CODE
+    VAR_CONDITIONS ::= VAR COMPARATOR VALUE {(and | or) VAR COMPARATOR VALUE}
     CODE ::= {EXPRESSION}

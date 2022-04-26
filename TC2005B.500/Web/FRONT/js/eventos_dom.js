@@ -24,7 +24,7 @@ function insertRow()
     for(i = 0; i < xCols; i++)
     {
         let newCell = newRow.insertCell(i)
-        newCell.innerHTML = `Row ${xRows} Column ${i+1}`
+        newCell.innerHTML = `Row ${xRows} column ${i+1}`
     }
 }
 
@@ -39,6 +39,16 @@ function insertColumn()
     {
         let row = thisTable.rows[i]
         let newCol = row.insertCell()
-        newCol.innerHTML = `Row ${i+1} Col ${xCols+1}`
+        newCol.innerHTML = `Row ${i+1} column ${xCols+1}`
     }
+}
+
+function changeContent()
+{
+    const thisTable = document.getElementById('myTable')
+    const thisRow = document.getElementsByName('row')
+    const thisCol = document.getElementsByName('col')
+    const value = document.getElementsByName('val')
+
+    thisTable.rows[thisRow].cells[thisCol].innerHTML=value
 }

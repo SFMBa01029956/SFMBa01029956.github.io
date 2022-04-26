@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link type="text/css" rel="stylesheet" href="../css/eventos_dom.css">
     <script src="../js/eventos_dom.js"></script>
     <title>Document</title>
 </head>
@@ -59,9 +59,15 @@
                 <td>Row3 cell2</td>
                 <td>Row3 cell3</td>
             </tr>
-            </table><form><br>
-            <input type="button" onclick="changeContent()" value="Change content">
-    </div>
+            </table>
+                <form id="form1" onsubmit="getFormvalue()">
+                    Row: <input type="int" name="row">
+                    Column: <input type="text" name="text" ><br>
+                    Value: <input type="text" name="val" ><br><br>
+                    <input type="button" onclick="changeContent()" value="Change content">
+    
+                </form><br>
+            </div>
 
     <div class="container">
         <p>5. Agrega el código para quitar o agregar elementos a la lista de opciones. Los colores pueden ser aleatorios.</p>
