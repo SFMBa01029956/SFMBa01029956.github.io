@@ -49,4 +49,8 @@ defmodule Tfiles do
     File.write(out_filename,Enum.join(Enum.map(Enum.map(File.stream!(in_filename)))))
   end
 
+  def json_line_to_html(in_line, out_line) do
+
+  end
+
 end
