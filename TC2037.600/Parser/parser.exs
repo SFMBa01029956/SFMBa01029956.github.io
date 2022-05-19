@@ -54,3 +54,8 @@ defmodule Tfiles do
   end
 
 end
+
+
+#regex.run(~r/(\w+)(\w+)/
+#use pattern matching for extracting each element on its own
+#[fullname, name, surname] = Regex.run()
