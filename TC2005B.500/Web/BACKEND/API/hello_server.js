@@ -26,6 +26,12 @@ app.get('/', (req, res)=>
     })
 })
 
+app.get('api/hello',(req, res)=>
+{
+    console.log(req)
+    res.send('hello')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
