@@ -7,12 +7,12 @@ const app = express()
 const port = 3000
 
 app.use(express.json())
-app.use('/css', express.static('./css'))
-app.use('/js', express.static('./js'))
+app.use('/CSS', express.static('./CSS'))
+app.use('/JS', express.static('./JS'))
 
 app.get('/', (req, res)=>
 {
-    fs.readFile('./html/helloWorld.html', 'utf8', 
+    fs.readFile('./HTML/helloWorld.html', 'utf8', 
     (err, html) => {
         if(err)
         {
@@ -26,11 +26,13 @@ app.get('/', (req, res)=>
     })
 })
 
-app.get('api/hello',(req, res)=>
+app.get('/api/hello',(req, res)=>
 {
     console.log(req)
     if(req.query.name !== undefined)
         res.send(`hello ${req.query.name} ${req.query.surname}`)
+    else
+        res.send('hello!')
 })
 
 app.listen(port, () => {
