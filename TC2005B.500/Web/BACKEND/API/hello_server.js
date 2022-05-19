@@ -29,7 +29,8 @@ app.get('/', (req, res)=>
 app.get('api/hello',(req, res)=>
 {
     console.log(req)
-    res.send('hello')
+    if(req.query.name !== undefined)
+        res.send(`hello ${req.query.name} ${req.query.surname}`)
 })
 
 app.listen(port, () => {
