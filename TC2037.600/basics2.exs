@@ -16,8 +16,8 @@ defmodule Lists do
     end
   end
   def sum_tail(list), do: do_sum_tail(list,0)
-  defp do_sum_tail([],result), do: result
-  defp do_sum_tail(list,result), do: do_sum_tail(tl(list),result+hd(list))
+    defp do_sum_tail([],result), do: result
+    defp do_sum_tail(list,result), do: do_sum_tail(tl(list),result+hd(list))
   end
 end
 
