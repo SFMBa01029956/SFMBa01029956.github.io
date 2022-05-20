@@ -15,16 +15,16 @@ defmodule Parser do
   end
 
   def check_punctuation(line) do
-    if Regex.match?(~r/\{|\}|\:/,line) do
-     "  #{Regex.run(~r/\s+/, line)}<span class='punctuation'>#{Regex.run(~r/\{|\}|\:/,line)}</span>"
+    if Regex.match?(~r/^\{|\}|\:/,line) do
+     "  #{Regex.run(~r/^\s+/, line)}<span class='punctuation'>#{Regex.run(~r/\{|\}|\:/,line)}</span>"
     else
       line
     end
   end
 
   def check_object_key(line) do
-    if Regex.match?(~r|\"\w+\"+|,line) do
-     "  #{Regex.run(~r/\s+/, line)}<span class='object-key'>#{Regex.run(~r/\"\w+\"/,line)}</span>"
+    if Regex.match?(~r|^\"\w+\"+|,line) do
+     "  #{Regex.run(~r/^\s+/, line)}<span class='object-key'>#{Regex.run(~r/\"\w+\"/,line)}</span>"
     else
       line
     end
