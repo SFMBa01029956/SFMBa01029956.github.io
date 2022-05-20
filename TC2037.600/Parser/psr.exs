@@ -14,6 +14,22 @@ defmodule Parser do
     File.write(out_filename, html)
   end
 
+  def check_punctuation_repl(line) do
+    if Regex.match?(~r/^\{|\}|\:/,line) do
+     Regex.replace(~r/^\s+/, line, "<span class='punctuation'>#{Regex.run(~r/\{|\}|\:/,line)}</span>")
+    else
+      line
+    end
+  end
+
+  def check_object_key_repl(line) do
+    if Regex.match?(~r|^\"\w+\"+|,line) do
+     Regex.replace(~r/^\s+/, line, "<span class='object-key'>#{Regex.run(~r/\"\w+\"/,line)}</span>")
+    else
+      line
+    end
+  end
+
   def check_punctuation(line) do
     if Regex.match?(~r/^\{|\}|\:/,line) do
      "  #{Regex.run(~r/^\s+/, line)}<span class='punctuation'>#{Regex.run(~r/\{|\}|\:/,line)}</span>"
@@ -24,18 +40,32 @@ defmodule Parser do
 
   def check_object_key(line) do
     if Regex.match?(~r|^\"\w+\"+|,line) do
-     "  #{Regex.run(~r/^\s+/, line)}<span class='object-key'>#{Regex.run(~r/\"\w+\"/,line)}</span>"
+      { Regex.run(~r|^\"\w+\"+|,line), object-key}
+      #"  #{Regex.run(~r/^\s+/, line)}<span class='object-key'>#{Regex.run(~r/\"\w+\"/,line)}</span>"
     else
       line
     end
   end
 
-  def pair_from_line(line) do
+  def pair_from_line("") do
     #Receive line -> Check class
-    check_object_key(line)
-    |> check_punctuation()
+    #check_object_key(line)
+    #|> check_punctuation()
     #check_punctuation(line)
     #|> check_object_key()
+    #"endOfLine"
+  #end
+
+  def pair_from_line(line) do
+    String.split_at(line,10)
+    #Receive line -> Check class
+    [token, type} = cond do
+      check_object_key(line) -> "<"
+
+      check_punctuation()
+    end
+
+  pair_from_line()
   end
 
   def xson_to_html() do
