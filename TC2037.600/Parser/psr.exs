@@ -1,0 +1,67 @@
+# Functions to work with files
+#
+# Gilberto Echeverria
+# 2022-05-03
+
+defmodule Tfiles do
+
+  def space_to_dash(in_filename, out_filename) do
+    # Single expression of nested calls
+    File.write(out_filename, Enum.join(Enum.map(Enum.map(File.stream!(in_filename),
+      &String.split/1), fn line -> Enum.join(line, "-") end), "\n"))
+
+    # Breaking down the steps and storing the results
+    temp1 = File.stream!(in_filename)
+    temp2 = Enum.map(temp1, &String.split/1)
+    temp3 = Enum.map(temp2, fn line -> Enum.join(line, "-") end)
+    temp4 = Enum.join(temp3, "\n")
+    File.write(out_filename, temp4)
+
+    # Using pipe operator to link the calls
+    text =
+      in_filename
+      |> File.stream!()
+      |> Enum.map(&String.split/1)
+      #|> IO.inspect()
+      |> Enum.map(&(Enum.join(&1, "-")))
+      #|> IO.inspect()
+      |> Enum.join("\n")
+    File.write(out_filename, text)
+  end
+
+  def get_emails(in_filename, out_filename) do
+    emails =
+      in_filename
+      |> File.stream!()
+      |> Enum.map(&email_from_line/1)
+      #|> IO.inspect()
+      |> Enum.filter(&(&1 != nil))
+      |> Enum.map(&hd/1)
+      |> Enum.join("\n")
+    File.write(out_filename, emails)
+  end
+
+  def email_from_line(line) do
+    Regex.run(~r|\w+(?:\.\w+)*@\w+(?:\.\w+)*\.[a-z]{2,4}|, line)
+  end
+
+  def json_to_html(in_filename, out_filename) do
+    htmlbody = "<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title>JSON Code</title>\n\t</head><body>"
+    html2 =
+      in_filename
+      |> File.stream!()
+      |> Enum.map(&pair_from_line/1)
+      |> Enum.join("\n")
+    html = htmlbody <> html2
+    File.write(out_filename, html)
+  end
+
+  def pair_from_line(line) do
+    Regex.run(~r|\"\w+\"\: \"\w+\"|,line)
+  end
+
+  def xson_to_html() do
+    json_to_html("./samples/example1.json","./results/example1.html")
+  end
+
+end
