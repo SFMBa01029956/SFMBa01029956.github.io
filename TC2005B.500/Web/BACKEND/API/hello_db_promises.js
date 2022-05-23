@@ -17,7 +17,7 @@ try
         database: 'api_game_db'
     })
     
-    console.log("Connection stablished!")
+    console.log("Connection established!")
 
     const [rows, fields] = await connection.execute('select * from users');
     
