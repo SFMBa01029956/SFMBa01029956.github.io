@@ -11,7 +11,7 @@ const connection = mysql.createConnection(
         password:'M4sqls3rv3r.', 
         database: 'api_game_db'
     })
-//Normal call to sql uses many callbacks which can get confusing
+//-Normal call to sql uses many callbacks which can get confusing-
 connection.connect(error=>
     {
         if (error) console.log(error)
