@@ -59,7 +59,7 @@ defmodule Parser do
   def pair_from_line(line) do
     String.split_at(line,10)
     #Receive line -> Check class
-    [token, type} = cond do
+    [token, type] = cond do
       check_object_key(line) -> "<"
 
       check_punctuation()
