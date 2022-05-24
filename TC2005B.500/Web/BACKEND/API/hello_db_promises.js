@@ -13,13 +13,13 @@ try
     {
         host:'localhost', 
         user:'salva4456', 
-        password:'*0gsc4Aah9Tla', 
+        password:'*0Gsc4Aah9Tla', 
         database: 'api_game_db'
     })
     
     console.log("Connection established!")
 
-    const [rows, fields] = await connection.execute('select id_user from users');
+    const [rows, fields] = await connection.execute('select id_users from users');
     
     console.log(Object.keys(rows[0]))
 
