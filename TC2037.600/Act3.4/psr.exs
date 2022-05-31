@@ -47,7 +47,7 @@ defmodule Parser do
     end
   end
 
-  def pair_from_line("") do
+  #def pair_from_line("") do
     #Receive line -> Check class
     #check_object_key(line)
     #|> check_punctuation()
