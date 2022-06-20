@@ -16,7 +16,7 @@ defmodule Parser do
   end
 
   def check_spaces({line,res}) do
-    token = Regex.run(~r/(?=^) *\t*/,line)
+    token = Regex.run(~r/^\s+/,line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"#{token}"}
@@ -26,7 +26,7 @@ defmodule Parser do
   end
 
   def check_punctuation({line,res}) do
-    token = Regex.run(~r/(?=^)[{}\,:\[\]]+/, line)
+    token = Regex.run(~r/^[{}\,:\[\]]+/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='punctuation'>#{token}</span>"}
@@ -36,7 +36,7 @@ defmodule Parser do
   end
 
   def check_object_key({line,res}) do
-    token = Regex.run(~r/(?=^)"[\w0-9:-_]+" *(?=.*:)/, line)
+    token = Regex.run(~r/^"[\w0-9:-_]+" *(?=\s*:)/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='key'>#{token}</span>"}
@@ -46,7 +46,7 @@ defmodule Parser do
   end
 
   def check_string({line,res}) do
-    token = Regex.run(~r/(?=^) ?(?=[\[]*)"[A-Za-z0-9 .,-:;\_\*\&\?\'\=\\\/@]*"(?=[,\]]*)/, line)
+    token = Regex.run(~r/^ ?(?=[\[]*)"[A-Za-z0-9 .,-:;\_\*\&\?\'\=\\\/@]*"(?=[,\]]*)/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='string'>#{token}</span>"}
@@ -56,7 +56,7 @@ defmodule Parser do
   end
 
   def check_number({line,res}) do
-    token = Regex.run(~r/(?=^)(?=(?:[^"]*"[^"]*")*[^"]*\Z) *[\d+E.-]*/, line)
+    token = Regex.run(~r/^-?\d+(\.\d+)?([Ee][-+]?\d+)?/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='number'>#{token}</span>"}
@@ -66,7 +66,7 @@ defmodule Parser do
   end
 
   def check_reserved_word({line,res}) do
-    token = Regex.run(~r/(?!.*\d)(?=^)(?=(?:[^"]*"[^"]*")*[^"]*\Z) *[a-zA-Z]+/, line)
+    token = Regex.run(~r/^true|^false|^null/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='reserved'>#{token}</span>"}
@@ -89,6 +89,6 @@ defmodule Parser do
   end
 
   def test_do() do
-    json_to_html("./samples/example2.json","./results/result.html")
+    json_to_html("./samples/short_jsons/out_file_000001.json","./results/result.html")
   end
 end

@@ -16,10 +16,14 @@ h1 {
     color: #1d92a7
 }
 
-.string,.reserved {
+.string {
     color: #a46a40;
 }
 
 .number {
     color: #6ff68c;
 }
+
+.reserved {
+    color: #4a35e8
+} 
