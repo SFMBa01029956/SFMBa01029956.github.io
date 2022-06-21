@@ -1,0 +1,35 @@
+{
+    "people": {
+        "subject_001": {
+            "name": "Sofi",
+            "surname": "Milanes",
+            "properties": {
+                "personality": "ISFP",
+                "dateOfBirth": "06/22/05",
+                "zodiacSign": "Cancer",
+                "eyeColor": "Hazel",
+                "bloodType": "A+",
+                "age": 27,
+                "married": false,
+                "smoker": false,
+                "CURP": "MIBSO50622MDFLRFA9"
+        
+            },
+        "subject_002": {
+            "name": "Salvador Federico",
+            "surname": "Milanes Braniff",
+            "properties": {
+                "personality": "INTP",
+                "dateOfBirth": "09/04/01",
+                "zodiacSign": "Virgo",
+                "eyeColor": "darkBrown",
+                "bloodType": "A+",
+                "age": 20,
+                "married": false,
+                "smoker": false,
+                "CURP": "MIBS..."
+            }
+        }
+        }
+    }
+}

@@ -13,17 +13,17 @@ h1 {
 }
 
 .key {
-    color: #1d92a7
+    color: #13cdee
 }
 
 .string {
-    color: #a46a40;
+    color: #fadb14;
 }
 
 .number {
-    color: #6ff68c;
+    color: #77ef91;
 }
 
 .reserved {
-    color: #4a35e8
+    color: #8f81f8
 } 
