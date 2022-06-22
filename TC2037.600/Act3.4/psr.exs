@@ -46,7 +46,7 @@ defmodule Parser do
   end
 
   def check_string({line,res}) do
-    token = Regex.run(~r/^ ?(?=[\[]*)"[A-Za-z0-9 .,-:;\-\+\_\*\&\?\'\=\\\/@]*"(?=[,\]]*)/, line)
+    token = Regex.run(~r/^ ?(?=[\[]*)"[A-Za-z0-9 .,-:;\-\+\_\*\&\?\'\=\\\/\(\)@]*"(?=[,\]]*)/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='string'>#{token}</span>"}

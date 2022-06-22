@@ -1,0 +1,29 @@
+body {
+    background-color: #000000;
+    color: #000000;
+}
+
+h1 {
+    background-color: #7dede4;
+    color: #000000;
+}
+
+.punctuation {
+    color: #ffffff;
+}
+
+.key {
+    color: #13cdee
+}
+
+.string {
+    color: #fadb14;
+}
+
+.number {
+    color: #77ef91;
+}
+
+.reserved {
+    color: #8f81f8
+} 
