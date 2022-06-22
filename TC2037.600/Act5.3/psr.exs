@@ -11,16 +11,19 @@ defmodule Parser do
 
   def parallel_json_to_html(pth) do
     Path.wildcard("#{pth}/*.json")
-    |> Enum.map(&Task.start(fn -> json_to_html(&1, "./html_results/#{&1}.html") end))
+    #|> IO.inspect()
+    |> Enum.map(&Task.async(fn -> json_to_html(&1, Regex.replace(~r/\.json/,&1,".html"))end))
+    |> Enum.map(&Task.await(&1))
   end
 
   def single_json_to_html(pth) do
     Path.wildcard("#{pth}/*.json")
-    |> Enum.map(&json_to_html(&1, "./html_results/#{&1}.html"))
+    |> Enum.map(&json_to_html(&1, Regex.replace(~r/\.json/,&1,".html")))
   end
 
   def json_to_html(in_filename, out_filename) do
     #Loading html template before inserting spans
+    IO.puts(out_filename)
     template = File.read!("./html_template.html")
     html2 =
       in_filename
