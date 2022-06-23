@@ -66,7 +66,7 @@ defmodule Parser do
   end
 
   def check_string({line,res}) do
-    token = Regex.run(~r/^ ?(?=[\[]*)"[A-Za-z0-9 .,-:;\-\+\_\*\&\?\'\=\\\/\(\)@]*"(?=[,\]]*)/, line)
+    token = Regex.run(~r/^ ?(?=[\[]*)"[A-Za-z0-9 .,-:;é\-\+\_\*\&\?\'\=\\\/\(\)\├\®@]*"(?=[,\]]*)/, line)
     if token != nil do
       {token, rest} = String.split_at(line, String.length(hd(token)))
       {rest,res<>"<span class='string'>#{token}</span>"}
@@ -109,6 +109,6 @@ defmodule Parser do
   end
 
   def test_do() do
-    json_to_html("./json_files/example_5.json","./html_results/test_result_0.html")
+    json_to_html("./json_files/out_file_000013.json","./html_results/test_result_0.html")
   end
 end
